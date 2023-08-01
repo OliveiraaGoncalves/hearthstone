@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">hearthstone</string>
+    <string name="homeactivity">homeActivity</string>
 </resources>

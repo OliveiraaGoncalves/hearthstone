@@ -3,6 +3,12 @@ plugins {
     id("com.hearthstone.android-library")
 }
 
+android{
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
 dependencies {
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)

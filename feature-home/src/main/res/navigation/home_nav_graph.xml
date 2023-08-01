@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home_nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/cardBackFragment">
 
+    <fragment
+        android:id="@+id/cardBackFragment"
+        android:name="com.hearthstone.feature_home.presentation.CardBackFragment"
+        android:label="fragment_card_back"
+        tools:layout="@layout/fragment_card_back" />
 </navigation>

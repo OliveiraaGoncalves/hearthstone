@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.Hearthstone" parent="Base.Theme.Hearthstone" />
+
+    <style name="Theme.Splashscreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/images</item>
+        <item name="windowSplashScreenAnimationDuration">2000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Hearthstone</item>
+    </style>
 </resources>
