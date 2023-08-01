@@ -1,4 +1,3 @@
-
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.hearthstone.application")
@@ -11,13 +10,17 @@ android {
 
 
 dependencies {
-    implementation(project(":feature-home"))
+    implementation(projects.featureHome)
+    implementation(projects.coreNetworking)
     implementation(libs.androidx.core)
     implementation(libs.splashscreen)
     implementation(libs.androidx.appcompat)
     implementation(libs.google.material)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+    implementation(libs.bundles.koin)
+    implementation(libs.bundles.kotlin)
+    implementation(libs.bundles.androidSupport)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit.ext)
 }

@@ -22,6 +22,10 @@ android {
     setupAndroidDefaultConfig()
     defaultConfig.targetSdk = Config.targetSdkVersion
 
+    buildFeatures{
+        buildConfig = true
+    }
+    
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true

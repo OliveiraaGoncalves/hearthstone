@@ -19,4 +19,5 @@ dependencyResolutionManagement {
 rootProject.name = "hearthstone"
 include (":app")
 include(":feature-home")
+include(":core-networking")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
