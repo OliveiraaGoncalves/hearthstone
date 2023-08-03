@@ -7,12 +7,15 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import com.hearthstone.feature.home.R
 import com.hearthstone.feature.home.databinding.ActivityHomeBinding
+import com.hearthstone.feature_home.di.HomeModule
+import org.koin.core.context.loadKoinModules
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        loadKoinModules(HomeModule.module)
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)

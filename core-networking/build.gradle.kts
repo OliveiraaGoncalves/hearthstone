@@ -18,8 +18,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core)
-    implementation(libs.androidx.appcompat)
     implementation(libs.bundles.kotlin)
     implementation(libs.bundles.networking)
     implementation(libs.bundles.koin)

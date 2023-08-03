@@ -5,17 +5,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hearthstone.feature.home.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.hearthstone.feature.home.databinding.FragmentCardBackBinding
 
 class CardBackFragment : Fragment() {
-    private var _binding: FragmentCardBackBinding? = null
-    private val binding get() = _binding!!
+    private val viewModel: CardBackViewModel by viewModel()
+
+    private var binding: FragmentCardBackBinding? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentCardBackBinding.inflate(inflater, container, false)
-        return binding.root
+    ) = FragmentCardBackBinding.inflate(inflater, container, false).apply {
+        lifecycle.addObserver(viewModel)
+        binding = this
+    }.root
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.itemsCardBackLiveData.observe(viewLifecycleOwner) {
+            binding?.recyclerViewHome?.layoutManager = LinearLayoutManager(requireContext())
+            binding?.recyclerViewHome?.setHasFixedSize(true)
+            binding?.recyclerViewHome?.adapter = CardBackAdapter(it){
+                //chamar tela de detalhes
+            }
+        }
     }
 }

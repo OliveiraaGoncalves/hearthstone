@@ -1,6 +1,6 @@
 [versions]
-kotlin = "1.8.20"
-android_gradle_plugin = "8.0.1"
+kotlin = "1.8.10"
+android_gradle_plugin = "7.4.2"
 koin = "3.4.0"
 
 #Test
@@ -25,6 +25,8 @@ viewmodel = "2.2.0"
 androidx_core_ktx = "1.1.0"
 androidx_navigation_ktx = "2.2.2"
 splashscreen = "1.0.0"
+modelMapper = "2.4.4"
+shapeshiftVersion = "0.8.0"
 
 #Networking
 moshi = "1.14.0"
@@ -70,7 +72,6 @@ splashscreen = { group = "androidx.core", name = "core-splashscreen", version.re
 # Koin
 koin_test = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
 koin_android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
-koin_compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 
 #Networking
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
@@ -79,9 +80,13 @@ moshi_converter = { group = "com.squareup.retrofit2", name = "converter-moshi", 
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
+#Mapper
+mapper = {group = "org.modelmapper", name = "modelmapper", version.ref = "modelMapper"}
+shapeshift = {group = "dev.krud", name = "shapeshift", version.ref = "shapeshiftVersion"}
+
 [bundles]
 networking = ["retrofit", "moshi", "moshi_converter", "okhttp", "interceptor"]
-koin = ["koin_android", "koin_compose"]
+koin = ["koin_android"]
 test = ["junit", "mockk", "mockk_android", "viewmodel_test", "koin_test"]
 androidSupport = ["androidx_core", "androidx_appcompat", "androidx_dynamicanimation","google_material"]
 kotlin = ["androidx_core", "kotlin_stdlib", "kotlin_reflect"]

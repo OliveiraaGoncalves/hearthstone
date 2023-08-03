@@ -1,5 +1,6 @@
 package com.hearthstone.core_networking.di
 
+import com.hearthstone.core_networking.adapter.NetworkResponseAdapterFactory
 import com.hearthstone.core.networking.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit
 object NetworkModule {
     val module = module {
         single(QualifierHost) {
-            ""
+            BuildConfig.HOST
         }
 
         single {
@@ -30,7 +31,6 @@ object NetworkModule {
                         .newBuilder()
                         .addHeader("X-RapidAPI-Key", BuildConfig.X_RAPIDAPI_KEY)
                         .addHeader("X-RapidAPI-Host", BuildConfig.X_RAPIDAPI_HOST)
-                        .addHeader("Content-Type", "application/json;charset=utf-8")
                         .build()
                 chain.proceed(newRequest)
             }
@@ -38,7 +38,7 @@ object NetworkModule {
 
         single<Interceptor>(QualifierLoggerInterceptor) {
             HttpLoggingInterceptor().setLevel(
-                HttpLoggingInterceptor.Level.NONE
+                HttpLoggingInterceptor.Level.BODY
             )
         }
         single {
@@ -78,6 +78,6 @@ object NetworkModule {
             .baseUrl(baseUrl)
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-//            .addCallAdapterFactory(NetworkResponseAdapterFactory(moshi))
+            .addCallAdapterFactory(NetworkResponseAdapterFactory(moshi))
             .build()
 }
