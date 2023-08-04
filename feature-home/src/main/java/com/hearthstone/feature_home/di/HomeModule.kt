@@ -1,25 +1,29 @@
 package com.hearthstone.feature_home.di
 
-import com.hearthstone.feature_home.data.CardBackRepository
-import com.hearthstone.feature_home.data.CardBackRepositoryImpl
-import com.hearthstone.feature_home.data.CardbackService
+import com.hearthstone.feature_home.data.HomeRepository
+import com.hearthstone.feature_home.data.HomeRepositoryImpl
+import com.hearthstone.feature_home.data.HomeService
 import com.hearthstone.feature_home.domain.CardBackUseCase
 import com.hearthstone.feature_home.domain.CardBackUseCaseImpl
-import com.hearthstone.feature_home.domain.mapper.CardBackMapper
-import com.hearthstone.feature_home.domain.mapper.CardBackMapperImpl
-import com.hearthstone.feature_home.presentation.CardBackViewModel
-import dev.krud.shapeshift.ShapeShift
-import dev.krud.shapeshift.ShapeShiftBuilder
+import com.hearthstone.feature_home.domain.mapper.CardMapper
+import com.hearthstone.feature_home.domain.mapper.CardMapperImpl
+import com.hearthstone.feature_home.presentation.DetailViewModel
+import com.hearthstone.feature_home.presentation.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import org.modelmapper.ModelMapper
 import retrofit2.Retrofit
 
 object HomeModule {
-    val module = module {
+    val instance = module {
         viewModel {
-            CardBackViewModel(
+            HomeViewModel(
                 useCase = get(),
+            )
+        }
+
+        viewModel {
+            DetailViewModel(
+                useCase = get()
             )
         }
 
@@ -30,16 +34,16 @@ object HomeModule {
             )
         }
 
-        factory<CardBackMapper> {
-            CardBackMapperImpl()
+        factory<CardMapper> {
+            CardMapperImpl()
         }
 
-        factory<CardBackRepository> {
-            CardBackRepositoryImpl(
-                cardbackService = get(),
+        factory<HomeRepository> {
+            HomeRepositoryImpl(
+                homeService = get(),
             )
         }
 
-        factory { get<Retrofit>().create(CardbackService::class.java) }
+        factory { get<Retrofit>().create(HomeService::class.java) }
     }
 }

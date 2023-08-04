@@ -10,5 +10,5 @@ object AppModule {
     private val module = module {
         single<Resources> { androidContext().resources }
     }
-    val list  = module + NetworkModule.module + HomeModule.module
+    val list = module + NetworkModule.module
 }

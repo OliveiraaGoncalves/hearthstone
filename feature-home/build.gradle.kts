@@ -1,6 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 plugins {
     id("com.hearthstone.android-library")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android{
@@ -14,10 +15,9 @@ dependencies {
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
     implementation(libs.google.material)
-    implementation(libs.mapper)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.bundles.koin)
     implementation(libs.bundles.networking)
-    implementation(libs.shapeshift)
+    implementation(libs.glide)
 }

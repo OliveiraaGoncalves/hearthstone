@@ -17,8 +17,8 @@ class NetworkResponseCall<T>(
     private val moshi: Moshi
 ) : CallDelegate<T, NetworkResponse<T>>(proxy) {
 
-    override fun enqueueImpl(callback: Callback<NetworkResponse<T>>) =
-        proxy.enqueue(object : Callback<T> {
+    override fun enqueueImpl(callback: Callback<NetworkResponse<T>>) {
+        return proxy.enqueue(object : Callback<T> {
             override fun onResponse(call: Call<T>, response: Response<T>) {
                 val body = response.body()
                 val code = response.code()
@@ -72,6 +72,7 @@ class NetworkResponseCall<T>(
                 }
             }
         })
+    }
 
     private fun responseSuccessful(
         body: T?,

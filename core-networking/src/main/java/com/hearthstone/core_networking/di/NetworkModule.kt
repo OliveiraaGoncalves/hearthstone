@@ -4,8 +4,10 @@ import com.hearthstone.core_networking.adapter.NetworkResponseAdapterFactory
 import com.hearthstone.core.networking.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.ConnectionPool
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -65,7 +67,10 @@ object NetworkModule {
             okHttpClientBuilder.addInterceptor(it)
         }
         return okHttpClientBuilder
-            .connectTimeout(15, TimeUnit.SECONDS)
+            .readTimeout(240, TimeUnit.SECONDS)
+            .connectTimeout(240, TimeUnit.SECONDS)
+            .connectionPool(ConnectionPool(0, 5, TimeUnit.MINUTES))
+            .protocols(listOf(Protocol.HTTP_1_1))
             .build()
     }
 

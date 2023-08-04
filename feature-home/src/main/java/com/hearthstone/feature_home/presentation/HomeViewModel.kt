@@ -7,23 +7,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hearthstone.feature_home.domain.CardBackUseCase
-import com.hearthstone.feature_home.domain.model.Cardback
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.onStart
+import com.hearthstone.feature_home.domain.model.Card
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-class CardBackViewModel(
+class HomeViewModel(
     private val useCase: CardBackUseCase
 ) : ViewModel(), DefaultLifecycleObserver {
 
-    private val _itemsCardbackLiveData = MutableLiveData<List<Cardback>>()
-    val itemsCardBackLiveData: LiveData<List<Cardback>> get() = _itemsCardbackLiveData
+    private val _itemsCardLiveData = MutableLiveData<List<Card>>()
+    val itemsCardBackLiveData: LiveData<List<Card>> get() = _itemsCardLiveData
 
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
         viewModelScope.launch {
-            useCase.getCardBacksItems().collect {
-                _itemsCardbackLiveData.postValue(it)
+            useCase.getCardItems().collect {
+                _itemsCardLiveData.postValue(it)
             }
         }
     }

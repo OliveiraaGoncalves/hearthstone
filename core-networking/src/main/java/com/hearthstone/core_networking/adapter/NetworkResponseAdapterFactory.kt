@@ -2,6 +2,7 @@ package com.hearthstone.core_networking.adapter
 
 import com.hearthstone.core_networking.handleProvider.NetworkResponse
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.rawType
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit

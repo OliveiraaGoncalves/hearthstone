@@ -9,5 +9,19 @@
         android:id="@+id/cardBackFragment"
         android:name="com.hearthstone.feature_home.presentation.CardBackFragment"
         android:label="fragment_card_back"
-        tools:layout="@layout/fragment_card_back" />
+        tools:layout="@layout/fragment_card_back" >
+        <action
+            android:id="@+id/action_cardBackFragment_to_detailCardBackFragment"
+            app:destination="@id/detailCardBackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailCardBackFragment"
+        android:name="com.hearthstone.feature_home.presentation.DetailCardBackFragment"
+        android:label="fragment_detail_card_back"
+        tools:layout="@layout/fragment_detail_card_back" >
+
+        <argument
+            android:name="cardBackArg"
+            app:argType="com.hearthstone.feature_home.domain.model.Card" />
+    </fragment>
 </navigation>

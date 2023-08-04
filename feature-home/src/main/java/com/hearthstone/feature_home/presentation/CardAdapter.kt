@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hearthstone.feature.home.databinding.AdapterBackItemBinding
-import com.hearthstone.feature_home.domain.model.Cardback
+import com.hearthstone.feature_home.domain.model.Card
 
-class CardBackAdapter(private val items: List<Cardback>, private val onItemClick: (item: Cardback) -> Unit) :
-    RecyclerView.Adapter<CardBackAdapter.ViewHolder>() {
+class CardAdapter(private val items: List<Card>, private val onItemClick: (item: Card) -> Unit) :
+    RecyclerView.Adapter<CardAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
@@ -23,7 +23,7 @@ class CardBackAdapter(private val items: List<Cardback>, private val onItemClick
 
     inner class ViewHolder(private val binding: AdapterBackItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Cardback) {
+        fun bind(item: Card) {
             binding.itemTextView.text = item.name
             binding.root.setOnClickListener {
                 onItemClick.invoke(item)

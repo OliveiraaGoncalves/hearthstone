@@ -9,6 +9,12 @@ tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
 
+buildscript {
+    dependencies {
+        classpath(libs.navigation.safe.args.gradle.plugin)
+    }
+}
+
 allprojects {
     repositories {
         google()
