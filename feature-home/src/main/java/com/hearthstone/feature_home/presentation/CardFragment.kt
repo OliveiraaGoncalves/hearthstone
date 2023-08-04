@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hearthstone.feature.home.databinding.FragmentCardBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import com.hearthstone.feature.home.databinding.FragmentCardBackBinding
 
-class CardBackFragment : Fragment() {
+class CardFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModel()
 
-    private var binding: FragmentCardBackBinding? = null
+    private var binding: FragmentCardBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,7 @@ class CardBackFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = FragmentCardBackBinding.inflate(inflater, container, false).apply {
+    ) = FragmentCardBinding.inflate(inflater, container, false).apply {
         binding = this
         visibleOrGone(View.VISIBLE)
     }.root
@@ -35,7 +35,7 @@ class CardBackFragment : Fragment() {
             binding?.recyclerViewHome?.setHasFixedSize(true)
             binding?.recyclerViewHome?.adapter = CardAdapter(it) { cardBack ->
                 findNavController().navigate(
-                    CardBackFragmentDirections.actionCardBackFragmentToDetailCardBackFragment(
+                    CardFragmentDirections.actionCardBackFragmentToDetailCardBackFragment(
                         cardBack
                     )
                 )
