@@ -5,15 +5,8 @@
 ## Índice
 
 - [Visão Geral](#visão-geral)
-- [Demo](#demo)
 - [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Como Usar](#como-usar)
 - [Arquitetura](#arquitetura)
-- [Testes](#testes)
-- [Contribuindo](#contribuindo)
-- [Autores](#autores)
-- [Licença](#licença)
 
 ## Visão Geral
 
@@ -37,7 +30,7 @@ O projeto "Hearthstone" é uma aplicação Android que tem como objetivo demonst
 
 Ter o ambiente de desenvolvimento configurado localmente utilizando java-11+
 
-Exemplo:
+clonar repo:
 
 ```bash
 git clone https://github.com/OliveiraaGoncalves/hearthstone.git
