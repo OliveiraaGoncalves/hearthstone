@@ -6,15 +6,15 @@ import com.hearthstone.feature_home.domain.model.Card
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-interface CardBackUseCase {
+interface HomeUseCase {
     suspend fun getCardItems(): Flow<List<Card>>
     suspend fun getCard(name: String): Flow<Card>
 }
 
-class CardBackUseCaseImpl(
+class HomeUseCaseImpl(
     private val repository: HomeRepository,
     private val mapper: CardMapper,
-) : CardBackUseCase {
+) : HomeUseCase {
     override suspend fun getCardItems(): Flow<List<Card>> =
         repository.getCardItems().map { cardSetResponse ->
             cardSetResponse.basic.map {

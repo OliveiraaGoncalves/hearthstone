@@ -6,13 +6,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hearthstone.feature_home.domain.CardBackUseCase
+import com.hearthstone.feature_home.domain.HomeUseCase
 import com.hearthstone.feature_home.domain.model.Card
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    private val useCase: CardBackUseCase
+    private val useCase: HomeUseCase
 ) : ViewModel(), DefaultLifecycleObserver {
 
     private val _itemsCardLiveData = MutableLiveData<List<Card>>()

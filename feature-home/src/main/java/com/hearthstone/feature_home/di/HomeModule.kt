@@ -3,8 +3,8 @@ package com.hearthstone.feature_home.di
 import com.hearthstone.feature_home.data.HomeRepository
 import com.hearthstone.feature_home.data.HomeRepositoryImpl
 import com.hearthstone.feature_home.data.HomeService
-import com.hearthstone.feature_home.domain.CardBackUseCase
-import com.hearthstone.feature_home.domain.CardBackUseCaseImpl
+import com.hearthstone.feature_home.domain.HomeUseCase
+import com.hearthstone.feature_home.domain.HomeUseCaseImpl
 import com.hearthstone.feature_home.domain.mapper.CardMapper
 import com.hearthstone.feature_home.domain.mapper.CardMapperImpl
 import com.hearthstone.feature_home.presentation.DetailViewModel
@@ -27,8 +27,8 @@ object HomeModule {
             )
         }
 
-        factory<CardBackUseCase> {
-            CardBackUseCaseImpl(
+        factory<HomeUseCase> {
+            HomeUseCaseImpl(
                 repository = get(),
                 mapper = get()
             )
