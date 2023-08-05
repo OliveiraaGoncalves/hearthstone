@@ -5,14 +5,14 @@
 ## Índice
 
 - [Visão Geral](#visão-geral)
+- [Principais Características](#principais-características)
 - [Pré-requisitos](#pré-requisitos)
-- [Arquitetura](#arquitetura)
 
 ## Visão Geral
 
 O projeto "Hearthstone" é uma aplicação Android que tem como objetivo demonstrar a aplicação dos princípios da Clean Architecture em um projeto modularizado, fazendo uso do JetPack Navigation e interações HTTP. Inspirado no popular jogo de cartas "Hearthstone", este aplicativo é uma representação simplificada que permite aos usuários explorar cartas e personagens do jogo.
 
-**Principais Características:**
+## Principais Características:
 
 **Clean Architecture:** O projeto Hearthstone é desenvolvido seguindo a Clean Architecture, uma abordagem que busca separar as preocupações e responsabilidades do código em camadas distintas: apresentação (UI), casos de uso (Use Cases), domínio (Entidades e Regras de Negócio) e dados (Gateways de Interface Externa). Essa arquitetura limpa promove a escalabilidade, manutenibilidade e testabilidade do aplicativo.
 
