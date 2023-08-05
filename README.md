@@ -1,0 +1,43 @@
+# Hearthstone
+
+
+
+## Índice
+
+- [Visão Geral](#visão-geral)
+- [Demo](#demo)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Como Usar](#como-usar)
+- [Arquitetura](#arquitetura)
+- [Testes](#testes)
+- [Contribuindo](#contribuindo)
+- [Autores](#autores)
+- [Licença](#licença)
+
+## Visão Geral
+
+O projeto "Hearthstone" é uma aplicação Android que tem como objetivo demonstrar a aplicação dos princípios da Clean Architecture em um projeto modularizado, fazendo uso do JetPack Navigation e interações HTTP. Inspirado no popular jogo de cartas "Hearthstone", este aplicativo é uma representação simplificada que permite aos usuários explorar cartas e personagens do jogo.
+
+**Principais Características:**
+
+**Clean Architecture:** O projeto Hearthstone é desenvolvido seguindo a Clean Architecture, uma abordagem que busca separar as preocupações e responsabilidades do código em camadas distintas: apresentação (UI), casos de uso (Use Cases), domínio (Entidades e Regras de Negócio) e dados (Gateways de Interface Externa). Essa arquitetura limpa promove a escalabilidade, manutenibilidade e testabilidade do aplicativo.
+
+<img width="702" alt="Captura de Tela 2023-08-05 às 10 58 19" src="https://github.com/OliveiraaGoncalves/hearthstone/assets/20058035/edbda2f2-c8d8-4517-872d-8c58a0e9d1c6">
+
+**Modularização:** O aplicativo Hearthstone é dividido em módulos independentes, cada um representando um componente ou funcionalidade específica. Essa modularização permite o desenvolvimento paralelo de diferentes partes do aplicativo, facilitando a colaboração entre equipes e a reutilização de código.
+
+<img width="844" alt="Captura de Tela 2023-08-05 às 10 59 24" src="https://github.com/OliveiraaGoncalves/hearthstone/assets/20058035/9597aa95-43ff-4bec-be39-44a95becae9f">
+
+**JetPack Navigation:** O projeto utiliza o componente de navegação do JetPack para gerenciar a navegação entre as diferentes telas e fragmentos do aplicativo de forma simples e declarativa. Isso garante uma experiência de usuário fluída e coerente durante a interação com o aplicativo.
+
+**Interações HTTP:** O aplicativo Hearthstone interage com uma API RESTful para obter informações sobre cartas e personagens do jogo. Essas interações HTTP são realizadas de forma organizada, seguindo as boas práticas de comunicação com serviços externos.
+
+## Pré-requisitos
+
+Ter o ambiente de desenvolvimento configurado localmente utilizando java-11+
+
+Exemplo:
+
+```bash
+git clone https://github.com/OliveiraaGoncalves/hearthstone.git
