@@ -59,13 +59,6 @@ viewmodel_test = { group = "androidx.arch.core", name = "core-testing", version.
 androidx_viewmodel_lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "viewmodel" }
 androidx_common_java = { group = "androidx.lifecycle", name = "lifecycle-reactivestreams", version.ref = "viewmodel" }
 
-# AndroidX test
-androidx_test_core = { group = "androidx.test", name = "core-ktx", version.ref = "androidx_test_core" }
-androidx_test_rules = { group = "androidx.test", name = "rules", version.ref = "androidx_test_rules" }
-androidx_test_runner = { group = "androidx.test", name = "runner", version.ref = "androidx_test_runner" }
-androidx_test_junit_ext = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidx_test_junit_ext" }
-android_test_mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockWebServer" }
-
 # Google
 google_material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
@@ -84,7 +77,7 @@ interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", ve
 [bundles]
 networking = ["retrofit", "moshi", "moshi_converter", "okhttp", "interceptor"]
 koin = ["koin_android"]
-test = ["junit", "mockk", "mockk_android", "viewmodel_test", "koin_test"]
+test = ["junit", "mockk", "viewmodel_test", "koin_test"]
 androidSupport = ["androidx_core", "androidx_appcompat", "androidx_dynamicanimation","google_material"]
 kotlin = ["androidx_core", "kotlin_stdlib", "kotlin_reflect"]
 

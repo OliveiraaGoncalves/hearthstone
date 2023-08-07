@@ -7,7 +7,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 object AppModule {
-    private val module = module {
+    val module = module {
         single<Resources> { androidContext().resources }
     }
     val list = module + NetworkModule.module

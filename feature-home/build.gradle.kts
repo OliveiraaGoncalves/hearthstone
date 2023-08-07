@@ -20,4 +20,7 @@ dependencies {
     implementation(libs.bundles.koin)
     implementation(libs.bundles.networking)
     implementation(libs.glide)
+
+    testImplementation(libs.bundles.test)
+
 }

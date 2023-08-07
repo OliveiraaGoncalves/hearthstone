@@ -10,7 +10,7 @@ class HearthstoneApplication : Application() {
     override fun onCreate() {
         super.onCreate()
        startKoin{
-            androidContext(this@HearthstoneApplication.applicationContext)
+            androidContext(this@HearthstoneApplication)
             modules(AppModule.list)
        }
     }

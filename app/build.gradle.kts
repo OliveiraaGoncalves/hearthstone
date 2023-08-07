@@ -20,6 +20,6 @@ dependencies {
     implementation(libs.bundles.koin)
     implementation(libs.bundles.kotlin)
     implementation(libs.bundles.androidSupport)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.junit.ext)
+
+    testImplementation(libs.bundles.test)
 }
