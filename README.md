@@ -16,7 +16,8 @@ O projeto "Hearthstone" é uma aplicação Android que tem como objetivo demonst
 
 **Clean Architecture:** O projeto Hearthstone é desenvolvido seguindo a Clean Architecture, uma abordagem que busca separar as preocupações e responsabilidades do código em camadas distintas: apresentação (UI), casos de uso (Use Cases), domínio (Entidades e Regras de Negócio) e dados (Gateways de Interface Externa). Essa arquitetura limpa promove a escalabilidade, manutenibilidade e testabilidade do aplicativo.
 
-<img width="702" alt="Captura de Tela 2023-08-05 às 10 58 19" src="https://github.com/OliveiraaGoncalves/hearthstone/assets/20058035/edbda2f2-c8d8-4517-872d-8c58a0e9d1c6">
+<img width="894" alt="Captura de Tela 2023-08-12 às 10 22 56" src="https://github.com/OliveiraaGoncalves/hearthstone/assets/20058035/bfd79052-960e-4178-a24d-7b22bd19e3a2">
+
 
 **Modularização:** O aplicativo Hearthstone é dividido em módulos independentes, cada um representando um componente ou funcionalidade específica. Essa modularização permite o desenvolvimento paralelo de diferentes partes do aplicativo, facilitando a colaboração entre equipes e a reutilização de código.
 
